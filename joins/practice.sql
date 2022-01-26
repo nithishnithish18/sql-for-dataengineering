@@ -41,3 +41,23 @@ from
 	regions r
 left join countries c on c.region_id = r.region_id
 left join locations l on l.country_id = c.country_id;
+
+#self join practice
+create database practice;
+use practice;
+create table cp
+(
+child char (3),
+parent char (3)
+);
+show tables;
+insert into cp values ('C1', 'C2' );
+insert into cp values ('A', 'AA' );
+insert into cp values ('B', 'BB' );
+insert into cp values ('C', 'CC' );
+insert into cp values ('AA', 'AAA');
+insert into cp values ('BB', 'BBB');
+insert into cp values ('CC', 'CCC');
+
+select t1.child as child,t1.parent as parent,t2.parent as gp from cp t1 join cp t2 on t1.parent = t2.child; 
+
