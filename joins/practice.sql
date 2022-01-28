@@ -44,7 +44,7 @@ left join locations l on l.country_id = c.country_id;
 #self join practice
 create database practice;
 use practice;
-create table cp
+create table cp.
 (
 child char (3),
 parent char (3)
@@ -64,4 +64,10 @@ use hr_db;
 select * from employees; 
 select concat(emp.first_name,' ',emp.last_name) as employee, concat(mngr.first_name,' ',mngr.last_name) as manager 
 from employees emp inner join employees mngr 
+on mngr.employee_id = emp.manager_id order by manager;
+
+# selfjoin - left example using employees table
+select * from employees; 
+select concat(emp.first_name,' ',emp.last_name) as employee, concat(mngr.first_name,' ',mngr.last_name) as manager 
+from employees emp left join employees mngr 
 on mngr.employee_id = emp.manager_id order by manager;
