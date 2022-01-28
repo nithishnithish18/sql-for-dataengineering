@@ -1,4 +1,3 @@
-
 #1. inner join
 #joining two tables
 select * from employees;
@@ -29,6 +28,7 @@ FROM
 	countries c 
 left join locations l on c.country_id = l.country_id;
 
+
 #joining three tables(tables - regions, countries, locations)
 select
 	r.region_id,
@@ -41,6 +41,7 @@ from
 	regions r
 left join countries c on c.region_id = r.region_id
 left join locations l on l.country_id = c.country_id;
+
 
 #self join practice
 create database practice;
@@ -60,6 +61,7 @@ insert into cp values ('BB', 'BBB');
 insert into cp values ('CC', 'CCC');
 
 select t1.child as child,t1.parent as parent,t2.parent as gp from cp t1 join cp t2 on t1.parent = t2.child; 
+
 
 # selfjoin example using employees table
 use hr_db;
