@@ -72,4 +72,22 @@ from
 	 inner join
 	employees mngr
 on
-	mngr.employee_id = emp.manager_id order by manager;
+	mngr.employee_id = emp.manager_id order by manager
+
+use classicmodels;
+show tables;
+
+#rightjoin ilustration using employees and customers tables
+select * from employees;
+select * from customers;
+select 
+	 customerNumber,
+     employeeNumber
+from
+	customers right join  employees
+on
+	salesRepEmployeeNumber = employeeNumber
+    
+order by employeeNumber;
+
+
