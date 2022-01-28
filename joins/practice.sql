@@ -61,3 +61,13 @@ insert into cp values ('CC', 'CCC');
 
 select t1.child as child,t1.parent as parent,t2.parent as gp from cp t1 join cp t2 on t1.parent = t2.child; 
 
+# selfjoin example using employees table
+use hr_db;
+select * from employees;
+select concat(emp.first_name,' ',emp.last_name) as employee, concat(mngr.first_name,' ',mngr.last_name) as manager 
+from
+	employees emp
+	 inner join
+	employees mngr
+on
+	mngr.employee_id = emp.manager_id order by manager;
