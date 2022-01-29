@@ -15,3 +15,15 @@ select status, customerNumber as quantity from orders group by status;
 
 select distinct status from orders;
 
+#having clause examples
+use classicmodels;
+select * from orderdetails;
+select 
+	orderNumber,
+	sum(quantityOrdered) as items, 
+	sum(quantityOrdered * priceEach) as total 
+from 
+	orderdetails 
+group by orderNumber 
+HAVING total > 1000;   
+
