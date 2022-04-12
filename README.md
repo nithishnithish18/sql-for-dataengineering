@@ -1,9 +1,2 @@
 # sql-for-dataengineering
-This Repo includes most important sql topics            
-
--> joins
-
--> window functions
-
--> constraints
-
+This Repo has most important sql topics
